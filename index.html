@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <title>Golden Bites</title>
+        <meta charset="UTF-8"><!-- codificarea în memorie a caracterelor-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- va fi explicat când ajungem la CSS -->
+        <meta name="keywords" content="comandă burgeri online, livrare rapidă fast food, fast food la domiciliu, comenzi non-stop, fast food, restaurant fast food, mâncare rapidă, livrare fast food, comandă online fast food, meniu fast food, mâncare la pachet, oferte fast food"><!--cuvintele cheie ale paginii; majoritatea motoarelor de căutare ignoră keywords -->
+        <meta name="description" content="Restaurant fast food online. Mâncare proaspătă."><!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
+        <meta name="author" content="Dragos-Mihai Oltean">  <!-- autorul/autoarea paginii-->
+        <link rel="icon" type="image/png" href="./resurse/imagini/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="./resurse/imagini/favicon/favicon.svg">
+        <link rel="shortcut icon" href="./resurse/imagini/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png">
+        <meta name="apple-mobile-web-app-title" content="Golden Bites">
+        <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest">
+        <link rel="stylesheet" type="text/css" href="./resurse/css/style.css">
+    </head>
+    <body>
+        <header>
+            <img src="./resurse/imagini/logo/logonobg.png" width="100" height="100" usemap="#logomap" alt="[logo]">
+            <map name="logomap">
+                <area shape="rect" coords="0,0,100,100" href="#" alt="[Logo]">
+            </map>
+            <h1>Golden Bites</h1>
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <a href="#produse">Produse proaspete</a>
+                        <ol class="items">
+                            <li><a href="#pui">Produse din pui</a></li>
+                            <li><a href="#vita">Produse din vita</a></li>
+                            <li><a href="#garnituri">Garnituri</a></li>
+                            <li><a href="#deserturi">Deserturi</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#meniuri">Meniuri</a>
+                            <ol class="items">
+                                <li><a href="#standard">Meniuri standard</a></li>
+                                <li><a href="#speciale">Oferte speciale</a></li>
+                            </ol>
+                    </li>
+                    <li>
+                        <a href="#bauturi">Bauturi</a>
+                        <ol class="items">
+                            <li><a href="#racoritoare">Bauturi racoritoare</a></li>
+                            <li><a href="#cafea">Cafea</a></li>
+                            <li><a href="#shakeuri">Shakeuri</a></li>
+                        </ol>
+                    </li>
+                    <li><a href="#">Acasa</a></li>
+                </ul>
+            </nav>
+            
+        </header>
+        <main>
+            <h1 id="titlusite">Bine ati venit la Golden Bites!</h1>
+            <div>
+                <p id="descriere">Descoperă gustul autentic și savoarea inegalabilă la Golden Bites! Indiferent dacă îți dorești un <b>burger suculent</b>, o porție crocantă de <b>aripi de pui</b> sau un <b>desert</b> care să-ți topească inima, la noi fiecare îmbucătură este o aventură culinară. <b>Produsele noastre proaspete</b> și preparate cu pasiune sunt perfecte pentru a-ți satisface <b>pofta</b> și a face pe alții să-ți urmeze exemplul. Așa că, dacă vrei să transformi o masă obișnuită într-o experiență memorabilă, Golden Bites este alegerea perfectă pentru tine și pentru cei dragi ție. Hai să facem poftă împreună! </p>
+            </div>
+            <section id="produse"> 
+                <h2 class="titlurisectiuni">Produse proaspete</h2>
+                <p>Aruncati o privire la meniul nostru! Puteti apasa pe elementele din imagine pentru a naviga meniul!</p>
+                <img src="./resurse/imagini/map/mapimage.png" usemap="#mapimage" width="200" height="200" alt="[Map image]">
+                <map name="mapimage">
+                    <area shape="rect" coords="30,30,90,130" href="#bauturi" alt="dreptunghi">
+                    <area shape="circle" coords="60,155,40" href="#garnituri" alt="cerc">
+                    <area shape="circle" coords="130,130,50" href="#pui" alt="cerc">
+                </map>
+                <section id="pui">
+                    <h3 class="titlurisectiuni">Produse din pui</h3>
+                    <div class="produs">
+                        <figure>
+                            <img src="./resurse/imagini/produse/pui/burgercrispy400.png" alt="[burgercrispy]" srcset="./resurse/imagini/produse/pui/burgercrispy400.png 400w, ./resurse/imagini/produse/pui/burgercrispy200.png 200w, ./resurse/imagini/produse/pui/burgercrispy100.png 100w" sizes="(min-width:1200px) 400px, (min-width:800px) 200px,  100px">
+                            <figcaption>Burger crispy</figcaption>
+                        </figure>
+                        <p>Pret: 23.00 Lei</p>
+                        <details>
+                            <summary>Detalii produs:</summary>
+                            <p><i>634 kcal, crispy de pui, condimente, castraveti murati, varza tocata, sos golden</i></p>
+                        </details>
+                    </div>
+                </section>
+                <section id="vita">
+                    <h3 class="titlurisectiuni">Produse din vita</h3>
+                    <div class="produs">
+                        <figure>
+                            <img src="./resurse/imagini/produse/vita/dublucheeseburger400.png" alt="[dublucheeseburger]" srcset="./resurse/imagini/produse/vita/dublucheeseburger400.png 400w, ./resurse/imagini/produse/vita/dublucheeseburger200.png 200w, ./resurse/imagini/produse/vita/dublucheeseburger100.png 100w" sizes="(min-width:1200px) 400px, (min-width:800px) 200px,  100px">
+                            <figcaption>Dublu Cheeseburger</figcaption>
+                        </figure>
+                        <p>Pret: <s>28.00 Lei</s><ins><b>23.99 Lei</b></ins></p>
+                        <details>
+                            <summary>Detalii produs:</summary>
+                            <p><i>712 kcal, 2x carne de vita, salata iceberg, chifle unse cu unt, 2x cheddar, sos golden</i></p>
+                        </details>
+                    </div>
+                    
+                </section>
+                <section id="garnituri">
+                    <h3 class="titlurisectiuni">Garnituri</h3>
+                    <p>Place-holder text</p>
+                </section>
+                <section id="deserturi">
+                    <h3 class="titlurisectiuni">Deserturi</h3>
+                    <p>Place-holder text</p>
+                </section>
+            </section>
+            <section id="meniuri"> 
+                <h2 class="titlurisectiuni">Meniuri</h2>
+                <p>Aici vor aparea meniurile!</p>
+                <p>Momentan nu exista :P</p>
+                <section id="standard">
+                    <h3 class="titlurisectiuni">Meniuri standard</h3>
+                    <p>Place-holder text</p>
+                </section>
+                <section id="speciale">
+                    <h3 class="titlurisectiuni">Oferte speciale</h3>
+                    <p>Place-holder text</p>
+                </section>
+            </section>
+            <section id="bauturi"> 
+                <h2 class="titlurisectiuni">Bauturi</h2>
+                <p>Aici vor aparea bauturile!</p>
+                <p>Momentan nu exista :P</p>
+                <section id="racoritoare">
+                    <h3 class="titlurisectiuni">Racoritoare</h3>
+                    <p>Place-holder text</p>
+                </section>
+                <section id="cafea">
+                    <h3 class="titlurisectiuni">Cafea</h3>
+                    <p>Place-holder text</p>
+                </section>
+                <section id="shakeuri">
+                    <h3 class="titlurisectiuni">Shakeuri</h3>
+                    <p>Place-holder text</p>
+                </section>
+            </section>
+            <div id="ad">
+                <p>Click <a href="https://www.youtube.com/embed/cz7_4SV6MH4?si=JKM_tp05SZ_0MiMA" target="videoIframe">aici</a> pentru a viziona meniul, sau <a href="https://www.youtube.com/embed/V5w1OGknhlc?si=TRnXRo1aw8_VMJgs" target="videoIframe">aici</a> pentru a vedea modul de preparare al produselor noastre!</p>
+                <iframe name="videoIframe" src="https://www.youtube.com/embed/cz7_4SV6MH4?si=JKM_tp05SZ_0MiMA" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <section id="angajare">
+                <h2 class="titlurisectiuni">Vrei sa ni te alaturi? Ai toate informatiile necesare in acest <a href="./resurse/fisiere/angajare.pdf" download="De ce sa te angajezi la Golden Bites.pdf">document</a>.</h2>
+                <embed src="./resurse/fisiere/angajare.pdf" type="application/pdf">
+            </section>
+            <section id="harta">
+                <h2>Aici ne puteti gasi!</h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.884301139307!2d26.097011776949405!3d44.43553547107595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFaculty%20of%20Mathematics%20and%20Computer%20Science!5e0!3m2!1sen!2sro!4v1740932748696!5m2!1sen!2sro"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+        <br>
+        <a href="https://www.google.com" target="_blank">Link catre google in caz ca va pierdeti!</a>
+        </main>
+        <footer>
+            <a href="#">Inapoi sus!</a>
+
+            <address>
+                <ul>
+                    <li><a href="tel:+40799123432">Telefon: +40799123432</a></li>
+                    <li><a href="https://maps.app.goo.gl/bQDk3ddJ2HQ2SRq28" target="_blank">Link catre locatie</a></li>
+                    <li><a href="mailto:goldenbites@gmail.com">Contactati-ne prin email!</a></li>
+                    <li><a href="https://wa.me/40799123432" target="_blank">Contactează-ne pe WhatsApp</a>
+                    </li>
+                </ul>
+            </address>
+            <p><small>Copyright &copy;<time datetime="2025-01-03">2025</time> Oltean Dragos-Mihai</small></p>
+        </footer>
+    </body>
+</html>
