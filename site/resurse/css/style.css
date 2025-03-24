@@ -45,7 +45,6 @@ body {
 }
 
 #grid-acasa > *{
-    outline: 1px solid black;
     padding: 20px;
 }
 /* mediu */
@@ -69,6 +68,12 @@ body {
     #grid-acasa > * {
         padding: 10px;
     }
+}
+
+.gridspace {
+    border-radius: 10px;
+    background-color: var(--alb);
+    box-shadow: 2px 2px var(--negru);
 }
 
 #welcome {
@@ -306,6 +311,8 @@ main {
 .titlurisectiuni {
     text-indent: 40px;
     text-shadow: .5px .5px .5px var(--negru);
+    border: none;
+    margin: none;
 }
 
 .produs {
@@ -381,6 +388,7 @@ footer p{
 
 footer a{
     text-decoration: none;
+    padding-left: 10px;
     color: rgb(208, 201, 104);
 }
 
@@ -390,4 +398,60 @@ footer a:hover{
 
 footer ul{
     list-style: none;
+}
+
+#link-top {
+    position: fixed;
+    bottom: 0.3em;
+    left: 0.3em;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: grey;
+    opacity: 0.6;
+    text-decoration: none;
+    border-radius: 50%;
+    background: rgb(173, 172, 172);
+    border: 4px solid transparent;
+    border-left-color: lightgrey;
+    border-right-color: lightgrey;
+    border-top-color: rgb(53, 53, 53);
+    border-bottom-color: rgb(53, 53, 53);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+    padding: 0;
+    margin: 0;  
+}
+
+#sageata {
+    display: inline-block;
+    color: rgb(53, 53, 53);
+    filter: blur(2px);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 
+                 -2px -2px 4px rgba(0, 0, 0, 0.3);
+    padding: 0;
+    margin: 0;
+    transition: filter 0.6s ease-in-out, text-shadow 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+#link-top:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+#link-top:hover #sageata {
+    filter: blur(0);
+    text-shadow: 0 0 0 rgb(53, 53, 53);
+    transform: rotate(-90deg);
+}
+
+.chewy-regular {
+    font-family: "Chewy", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
 }
