@@ -1,62 +1,12 @@
 <!DOCTYPE html>
 <html lang="ro">
     <head>
-        <title>Golden Bites</title>
-        <meta charset="UTF-8"><!-- codificarea în memorie a caracterelor-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- va fi explicat când ajungem la CSS -->
         <meta name="keywords" content="comandă burgeri online, livrare rapidă fast food, fast food la domiciliu, comenzi non-stop, fast food, restaurant fast food, mâncare rapidă, livrare fast food, comandă online fast food, meniu fast food, mâncare la pachet, oferte fast food"><!--cuvintele cheie ale paginii; majoritatea motoarelor de căutare ignoră keywords -->
         <meta name="description" content="Restaurant fast food online. Mâncare proaspătă."><!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
-        <meta name="author" content="Dragos-Mihai Oltean">  <!-- autorul/autoarea paginii-->
-        <link rel="icon" type="image/png" href="./resurse/imagini/favicon/favicon-96x96.png" sizes="96x96">
-        <link rel="icon" type="image/svg+xml" href="./resurse/imagini/favicon/favicon.svg">
-        <link rel="shortcut icon" href="./resurse/imagini/favicon/favicon.ico">
-        <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png">
-        <meta name="apple-mobile-web-app-title" content="Golden Bites">
-        <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest">
-        <link rel="stylesheet" type="text/css" href="./resurse/css/style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/bca8d7dbbe.js" crossorigin="anonymous"></script>
+        <%- include("../fragmente/head.ejs")%>
     </head>
     <body>
-        <header>
-            <img src="./resurse/imagini/logo/logonobg.png" width="100" height="100" usemap="#logomap" alt="[logo]">
-            <map name="logomap">
-                <area shape="rect" coords="0,0,100,100" href="#" alt="[Logo]">
-            </map>
-            <h1>Golden Bites</h1>
-            <nav class="navbar">
-                <ul>
-                    <li class="butoaneprincipale">
-                        <a href="#produse">Produse proaspete</a>
-                        <ol class="items">
-                            <li><a href="#pui">Produse din pui</a></li>
-                            <li><a href="#vita">Produse din vita</a></li>
-                            <li><a href="#garnituri">Garnituri</a></li>
-                            <li><a href="#deserturi">Deserturi</a></li>
-                        </ol>
-                    </li>
-                    <li class="butoaneprincipale">
-                        <a href="#meniuri">Meniuri</a>
-                            <ol class="items">
-                                <li><a href="#standard">Meniuri standard</a></li>
-                                <li><a href="#speciale">Oferte speciale</a></li>
-                            </ol>
-                    </li>
-                    <li class="butoaneprincipale">
-                        <a href="#bauturi">Bauturi</a>
-                        <ol class="items">
-                            <li><a href="#racoritoare">Bauturi racoritoare</a></li>
-                            <li><a href="#cafea">Cafea</a></li>
-                            <li><a href="#shakeuri">Shakeuri</a></li>
-                        </ol>
-                    </li>
-                    <li><a href="#">Acasa</a></li>
-                </ul>
-            </nav>
-            
-        </header>
+        <%- include("../fragmente/header.ejs")%>
         <main>
             <div id="grid-acasa">
                 <div id="welcome" class="gridspace">
@@ -250,20 +200,6 @@
                 </div>
             </div>
         </main>
-        <footer>
-            <a href="#" title="Inapoi sus!" id="link-top">
-                <span id="sageata">↑</span>
-            </a>
-            
-            <address>
-                <ul>
-                    <li><i class="fa-solid fa-phone" style="color: #FFD43B;"></i> <a href="tel:+40799123432">Telefon: +40799123432</a></li>
-                    <li><i class="fa-solid fa-earth-americas" style="color: #FFD43B;"></i> <a href="https://maps.app.goo.gl/bQDk3ddJ2HQ2SRq28" target="_blank">Link catre locatie</a></li>
-                    <li><i class="fa-solid fa-envelope" style="color: #FFD43B;"></i> <a href="mailto:goldenbites@gmail.com">Contactati-ne prin email!</a></li>
-                    <li><i class="fa-solid fa-comment" style="color: #FFD43B;"></i> <a href="https://wa.me/40799123432" target="_blank">Contactează-ne pe WhatsApp</a></li>
-                </ul>
-            </address>
-            <p><small>Copyright &copy;<time datetime="2025-01-03">2025</time> Oltean Dragos-Mihai</small></p>
-        </footer>
+        <%- include("../fragmente/footer.ejs")%>
     </body>
 </html>

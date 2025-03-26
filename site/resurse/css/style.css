@@ -1,6 +1,39 @@
-header, main, footer, body {
-    margin: 0;
-    padding: 0;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 html {
@@ -113,6 +146,11 @@ body {
     grid-area: produse;
 }
 
+#bestseller > p{
+    padding-top: 10px;
+    font-size: 0.8rem;
+}
+
 #promovare > iframe {
     min-width: 300px;
     max-width: 400px;
@@ -125,35 +163,54 @@ body {
 /* container cu iframe*/
 #container-iframe {
     display: flex;
-    flex-direction: column;
-    align-items: left;
-    gap: 15px;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#container-iframe > iframe {
+    border: 4px solid var(--culoare-borders);
 }
 
 #taburi-iframe {
     display: flex;
-    gap: 10px;
-    justify-content: left;
+    flex-direction: column;
+    gap: 5px;
+    width: 150px;
 }
 
 #taburi-iframe > a {
-    display: inline-block;
-    padding: 10px 15px;
-    width: 150px;
-    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
     background-color: var(--culoare-secundara);
-    color: var(--alb);
+    color: var(--culoare-footer);
     text-decoration: none;
-    border-radius: 5px;
-    border: 1px solid var(--culoare-footer);
-    transition: background-color 0.3s;
-    color: var(--culoare-principala);
+    border-radius: 10px 0 0 10px;
+    border: 2px solid var(--culoare-borders);
+    font-weight: bold;
+    overflow: hidden;
 }
 
+#taburi-iframe > a span {
+    position: absolute;
+    left: 3%;
+    top: 5%;
+    bottom: 5%;
+    width: 100%;
+    background-color: #3b694c;
+    border-radius: 8px 0 0 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
 
-#taburi-iframe a:hover {
-    background-color: var(--culoare-footer);
-    color: var(--culoare-hover);
+#taburi-iframe > a:hover span {
+    background-color: var(--culoare-secundara);
+    color: #3b694c;
 }
 
 
@@ -206,6 +263,9 @@ header > h1 {
     color: var(--culoare-principala);
     align-content: center;
     padding-left: 30px;
+    padding-right: 20px;
+    font-size: 2.2rem;
+    text-shadow: 1.2px 1.2px 1.2px var(--culoare-borders);
 }
 
 .items {
@@ -287,13 +347,6 @@ main {
     box-sizing: border-box;
 }
 
-#titlusite {
-    padding-top: 20px;
-    text-align: center;
-    margin: 0;
-    padding-bottom: 10px;
-}
-
 
 #descriere {
     text-indent: 50px;
@@ -309,6 +362,8 @@ main {
 }
 
 .titlurisectiuni {
+    padding: 10px;
+    font-size: 1.5rem;
     text-indent: 40px;
     text-shadow: .5px .5px .5px var(--negru);
     border: none;
@@ -454,4 +509,26 @@ footer ul{
     font-weight: 400;
     font-style: normal;
     text-align: center;
+    font-size: 2rem;
+    padding: 10px;
+}
+
+
+/* MathML */
+#mathPfinal, #mathfinal {
+    color:red;
+    font-weight: bold;
+}
+
+#mathPtotal, #mathtotal {
+    color: blue;
+    font-weight: bold;
+}
+
+.discount {
+    color: var(--culoare-principala);
+}
+
+#feedback > h2 > i {
+    text-indent: 0px;
 }
