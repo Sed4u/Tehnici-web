@@ -21,40 +21,52 @@
     </head>
     <body>
         <header>
+            <div>
+                <img class="banner" src="./resurse/imagini/logo/logo.png" alt="[logo]">
+            </div>
             <img src="./resurse/imagini/logo/logonobg.png" width="100" height="100" usemap="#logomap" alt="[logo]">
             <map name="logomap">
                 <area shape="rect" coords="0,0,100,100" href="#" alt="[Logo]">
             </map>
-            <h1>Golden Bites</h1>
-            <nav class="navbar">
-                <ul>
-                    <li class="butoaneprincipale">
-                        <a href="#produse">Produse proaspete</a>
-                        <ol class="items">
-                            <li><a href="#pui">Produse din pui</a></li>
-                            <li><a href="#vita">Produse din vita</a></li>
-                            <li><a href="#garnituri">Garnituri</a></li>
-                            <li><a href="#deserturi">Deserturi</a></li>
-                        </ol>
-                    </li>
-                    <li class="butoaneprincipale">
-                        <a href="#meniuri">Meniuri</a>
+            <h1 class="titlusite">Golden Bites</h1>
+            <div id="burgermenunavbar">
+                <input type="checkbox" id="burger-toggle">
+                <label id="burgermenu" for="burger-toggle">
+                    <i class="fa-solid fa-bars fa-sm"></i>
+                </label>
+                <nav class="navbar">
+                    <ul>
+                        <li class="butoaneprincipale">
+                            <span id="iconcasa"><i class="fa-solid fa-house fa-sm"></i></span>
+                            <a href="#" id="butonacasa">Acasa</a>
+                        </li>
+                        <li class="butoaneprincipale">
+                            <a href="#produse">Produse proaspete</a>
                             <ol class="items">
-                                <li><a href="#standard">Meniuri standard</a></li>
-                                <li><a href="#speciale">Oferte speciale</a></li>
+                                <li><a href="#pui">Produse din pui</a></li>
+                                <li><a href="#vita">Produse din vita</a></li>
+                                <li><a href="#garnituri">Garnituri</a></li>
+                                <li><a href="#deserturi">Deserturi</a></li>
                             </ol>
-                    </li>
-                    <li class="butoaneprincipale">
-                        <a href="#bauturi">Bauturi</a>
-                        <ol class="items">
-                            <li><a href="#racoritoare">Bauturi racoritoare</a></li>
-                            <li><a href="#cafea">Cafea</a></li>
-                            <li><a href="#shakeuri">Shakeuri</a></li>
-                        </ol>
-                    </li>
-                    <li><a href="#">Acasa</a></li>
-                </ul>
-            </nav>
+                        </li>
+                        <li class="butoaneprincipale">
+                            <a href="#meniuri">Meniuri</a>
+                                <ol class="items">
+                                    <li><a href="#standard">Meniuri standard</a></li>
+                                    <li><a href="#speciale">Oferte speciale</a></li>
+                                </ol>
+                        </li>
+                        <li class="butoaneprincipale">
+                            <a href="#bauturi">Bauturi</a>
+                            <ol class="items">
+                                <li><a href="#racoritoare">Bauturi racoritoare</a></li>
+                                <li><a href="#cafea">Cafea</a></li>
+                                <li><a href="#shakeuri">Shakeuri</a></li>
+                            </ol>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
             
         </header>
         <main>
@@ -181,7 +193,7 @@
                         <area shape="circle" coords="60,155,40" href="#garnituri" alt="cerc">
                         <area shape="circle" coords="130,130,50" href="#pui" alt="cerc">
                     </map>
-                    <section id="pui">
+                    <section class="produseindividuale" id="pui">
                         <h3 class="titlurisectiuni">Produse din pui</h3>
                         <div class="produs">
                             <figure>
@@ -195,7 +207,7 @@
                             </details>
                         </div>
                     </section>
-                    <section id="vita">
+                    <section class="produseindividuale" id="vita">
                         <h3 class="titlurisectiuni">Produse din vita</h3>
                         <div class="produs">
                             <figure>
@@ -209,15 +221,15 @@
                             </details>
                         </div>
                     </section>
-                    <section id="garnituri">
+                    <section class="produseindividuale" id="garnituri">
                         <h3 class="titlurisectiuni">Garnituri</h3>
                         <p>Place-holder text</p>
                     </section>
-                    <section id="deserturi">
+                    <section class="produseindividuale" id="deserturi">
                         <h3 class="titlurisectiuni">Deserturi</h3>
                         <p>Place-holder text</p>
                     </section>
-                <section id="meniuri"> 
+                <section class="produseindividuale" id="meniuri"> 
                     <h2 class="titlurisectiuni">Meniuri</h2>
                     <p>Aici vor aparea meniurile!</p>
                     <p>Momentan nu exista :P</p>
@@ -230,7 +242,7 @@
                         <p>Place-holder text</p>
                     </section>
                 </section>
-                <section id="bauturi"> 
+                <section class="produseindividuale" id="bauturi"> 
                     <h2 class="titlurisectiuni">Bauturi</h2>
                     <p>Aici vor aparea bauturile!</p>
                     <p>Momentan nu exista :P</p>
@@ -264,6 +276,7 @@
                 </ul>
             </address>
             <p><small>Copyright &copy;<time datetime="2025-01-03">2025</time> Oltean Dragos-Mihai</small></p>
+            <p>Acesta este un proiect scolar!</p>
         </footer>
     </body>
 </html>
