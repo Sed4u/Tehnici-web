@@ -1,20 +1,39 @@
 const express= require("express");
-const path = require("path");
-const fs=require("fs");
+const path= require("path");
+const fs = require("fs");
+
+
 app= express();
 
-app.set("view engine", "ejs")
+const vect_foldere = ["temp"];
 
+for (let folder of vect_foldere) {
+    let caleCompleta = path.join(__dirname, folder);
 
-obGlobal ={
+    if (!fs.existsSync(caleCompleta)) {
+        fs.mkdirSync(caleCompleta, { recursive: true });
+        console.log(`Folderul '${folder}' a fost creat.`);
+    } else {
+        console.log(`Folderul '${folder}' deja există.`);
+    }
+}
+
+console.log("Folderul proiectului: ", __dirname)
+console.log("Calea fisierului index.js: ", __filename)
+console.log("Folderul curent de lucru: ", process.cwd())
+
+app.set("view engine", "ejs");
+
+obGlobal={
     obErori:null
 }
 
 
 function initErori(){
     let continut = fs.readFileSync(path.join(__dirname,"resurse/json/erori.json")).toString("utf-8");
-    
+    console.log(continut)
     obGlobal.obErori=JSON.parse(continut)
+    console.log(obGlobal.obErori)
     
     obGlobal.obErori.eroare_default.imagine=path.join(obGlobal.obErori.cale_baza, obGlobal.obErori.eroare_default.imagine)
     for (let eroare of obGlobal.obErori.info_erori){
@@ -49,100 +68,116 @@ function afisareEroare(res, identificator, titlu, text, imagine){
     }
     res.render("pagini/eroare", { //transmit obiectul locals
         titlu: titluCustom,
-        text: textCustom,
+        text: textCustom,   
         imagine: imagineCustom
 })
 
 }
 
+app.use("/resurse", function(req, res, next){
+    let caleFisier = path.join(__dirname, "resurse", req.url); 
+    if (fs.existsSync(caleFisier) && fs.lstatSync(caleFisier).isDirectory()) {
+        afisareEroare(res, 403);
+    } else {
+        next();
+    }
+});
 
-console.log("Calea proiectului:",__dirname);
-console.log("Calea fisierului index.js:",__filename);
-console.log("Calea folderului de lucru:",process.cwd());
+app.use("/views", function(req, res, next){
+    let caleFisier = path.join(__dirname, "views", req.url); 
+    if (fs.existsSync(caleFisier) && fs.lstatSync(caleFisier).isDirectory()) {
+        afisareEroare(res, 403);
+    } else {
+        next();
+    }
+});
 
-app.use("/resurse", express.static(path.join(__dirname,"resurse")))
+
+app.use("/resurse", express.static(path.join(__dirname, "resurse"), {
+    index: false,
+    fallthrough: true
+}))
 
 app.get("/favicon.ico", function(req, res){
-    res.sendFile(path.join(__dirname, "/resurse/imagini/favicon/favicon.ico"))
+    res.sendFile(path.join(__dirname, "resurse/imagini/favicon/favicon.ico"))
 })
 
-app.get(["/","/home","/index"],function(req, res){
-    res.render("pagini/index", 
-        {ip:req.ip}
-    );
-}
-)
+app.get(["/","/index","/home"], function(req, res){
+    res.render("pagini/index",{ip:req.ip});
+})
 
-// app.get("/despre",function(req, res){
+// app.get("/despre", function(req, res){
 //     res.render("pagini/despre");
-// }
-// )
+// })
 
-// app.get("/index/a",function(req, res){
-//     res.render("pagini/index");
-// }
-// )
+app.get("/index/a", function(req, res){
+    res.render("pagini/index");
+})
 
 
-app.get("/fisier", function(req, res){
+app.get("/cerere", function(req, res){
+    res.send("<p style='color:blue'>Buna ziua</p>")
+})
+
+
+app.get("/fisier", function(req, res, next){
     res.sendfile(path.join(__dirname,"package.json"));
 })
 
-app.get("/cerere", function(req, res){
-    res.send("<p style='color:blue'>Buna seara!</p>");
+
+app.get("/abc", function(req, res, next){
+    res.write("Data curenta: ")
+    next()
 })
 
 app.get("/abc", function(req, res, next){
-    res.write("Data de azi:");
-    next();
-})
-
-
-app.get("/abc", function(req, res, next){
-    res.write((new Date())+"");
+    res.write((new Date())+"")
     res.end()
-    // next();
+    next()
 })
 
 
 app.get("/abc", function(req, res, next){
-    console.log("-----------------------------------")
-    next();
-})
-
-app.get("/*.ejs", function(req,res,next){
-    console.log("Am ajuns aici")
+    console.log("------------")
 })
 
 
-app.get("/*", function(req, res){
-    try {
-        res.render("pagini"+req.url,function(err, rezultatRandare){
-            if(err){
+
+
+app.get("/*.ejs", function(req, res, next){
+    afisareEroare(res,400);
+})
+
+
+
+app.get("/*", function(req, res, next){
+    try{
+        res.render("pagini"+req.url,function (err, rezultatRandare){
+            if (err){
                 if(err.message.startsWith("Failed to lookup view")){
                     afisareEroare(res,404);
                 }
                 else{
-                    //eroare generala
                     afisareEroare(res);
                 }
             }
             else{
-                res.send(rezultatRandare);
-                afisareEroare(res);
+                console.log(rezultatRandare);
+                res.send(rezultatRandare)
             }
-        })
+        });
     }
-    catch(errRandare){ 
+    catch(errRandare){
         if(errRandare.message.startsWith("Cannot find module")){
             afisareEroare(res,404);
         }
         else{
-            //eroare generala
             afisareEroare(res);
         }
     }
 })
+
+
 
 app.listen(8080);
 console.log("Serverul a pornit")
